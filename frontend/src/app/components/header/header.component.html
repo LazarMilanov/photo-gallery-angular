@@ -1,0 +1,25 @@
+<header class="site-header">
+    <nav class="navbar navbar-expand-md">
+        <div class="container">
+            <a routerLink="/images">
+                <h2>Image website</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle"
+            aria-controls="navbarToggle"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            (click)="isMenuCollapsed = !isMenuCollapsed">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarToggle">
+                <div class="navbar-nav ms-auto">
+                    <a *ngIf="!authService.loggedIn()" class="btn nav-item nav-link" routerLink="/login">Login</a>
+                    <a *ngIf="!authService.loggedIn()" class="btn nav-item nav-link" routerLink="/sign-up">Sign up</a>
+                    <a *ngIf="authService.loggedIn()" class="btn nav-item nav-link" routerLink="/add-image">Add image</a>
+                    <a *ngIf="authService.loggedIn()" class="btn nav-item nav-link" routerLink="/reset-password">Reset password</a>
+                    <a *ngIf="authService.loggedIn()" class="btn nav-item nav-link" (click)="authService.logout()">Log out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

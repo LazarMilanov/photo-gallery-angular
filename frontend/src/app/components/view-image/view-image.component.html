@@ -1,0 +1,18 @@
+<div class="container m-2">
+    <div class="row">
+        <div class="col-md-8">
+            <img [src]="image?.imageUrl" class="img-fluid">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <div>
+                <p>Author: {{ author?.email }}</p>
+                <p>Description: {{ image?.description }}</p>
+                <div class="d-flex justify-content-center">
+                    <button *ngIf="authService.getUserId() === author?._id" class="btn btn-success" [routerLink]="['/edit-image', image?._id]">Edit</button>
+                    <button *ngIf="authService.getUserId() === author?._id" class="btn btn-danger ms-2" (click)="deleteImage()">Delete</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

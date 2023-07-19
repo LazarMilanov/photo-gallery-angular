@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center align-items-center signup-container">
+    <div class="col-sm-5 p-3 text-center signup-form">
+        <h1>Sign up</h1>
+
+        <form [formGroup]="signupForm" autocomplete="off" novalidate (ngSubmit)="signup()">
+            <fieldset class="form-group">
+                <div class="form-group">
+                    <input class="form-control signup-input" type="email" ngDefaultControl formControlName="email" required placeholder="Email Address" minlength="5">
+                </div>
+                <div class="form-group">
+                    <input class="form-control signup-input" type="password" ngDefaultControl formControlName="password" required placeholder="Password" minlength="5">
+                </div>
+                <div class="form-group">
+                    <input class="form-control signup-input" type="password" ngDefaultControl formControlName="confirmPassword" required placeholder="Confirm Password" minlength="5">
+                </div>
+            </fieldset>
+
+            <button class="btn signup-button" type="submit">Sign up</button>
+        </form>
+    </div>
+</div>

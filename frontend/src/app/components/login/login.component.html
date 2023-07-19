@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center align-items-center login-container">
+    <div class="col-sm-5 p-3 text-center login-form">
+        <h1>Login</h1>
+
+        <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="login()">
+            <fieldset class="form-group">
+                <div class="form-group">
+                    <input class="form-control login-input" type="email" ngDefaultControl formControlName="email" required placeholder="Email Address" minlength="5">
+                </div>
+                <div class="form-group">
+                    <input class="form-control login-input" type="password" ngDefaultControl formControlName="password" required placeholder="Password" minlength="5">
+                </div>
+            </fieldset>
+
+            <button class="btn login-button" type="submit">Login</button>
+        </form>
+    </div>
+</div>

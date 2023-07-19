@@ -1,0 +1,20 @@
+.signup-form {
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background: #f3f3f3;
+    border-radius: 5px;
+}
+
+.signup-input {
+    margin: 10px 0;
+}
+
+.signup-container {
+    min-height: calc(80vh - (24px + 60px));
+}
+
+.signup-button {
+    width: 100%;
+    background-color: black;
+    color: white;
+}

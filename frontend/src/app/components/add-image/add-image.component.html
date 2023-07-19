@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center align-items-center add-container">
+    <div class="col-sm-7 col-lg-5 p-3 text-center add-form">
+        <h1>Add a new image</h1>
+
+        <form [formGroup]="addImageForm" autocomplete="off" novalidate (ngSubmit)="addImage()">
+            <fieldset class="form-group">
+                <img *ngIf="imageUrl" [src]="imageUrl">
+                <div class="form-group">
+                    <div class="drop-zone add-input" (drop)="handleDrop($event)" (dragover)="handleDragOver($event)">
+                        <p>Drag and drop files here or click to select files</p>
+                        <input type="file" id="fileInput" (change)="handleFileInput($event)" accept=".jpg,.jpeg,.png">                       
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control add-input" type="text" ngDefaultControl formControlName="description" required placeholder="Short description" minlength="5">
+                </div>
+            </fieldset>
+
+            <button class="btn add-button" type="submit">Add image</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-center"><h4>Logged in as: {{ email }}</h4></div>
+<div class="container-fluid">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="col" *ngFor="let image of images">
+      <div class="image-container">
+        <a class="image-link" [routerLink]="['/view-image', image._id]">
+          <img [src]="image.imageUrl" class="img-fluid rounded">
+        </a>
+      </div>
+    </div>
+</div>

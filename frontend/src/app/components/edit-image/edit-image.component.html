@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center align-items-center add-container">
+    <div class="col-sm-7 col-lg-5 p-3 text-center add-form">
+        <h1>Edit image description</h1>
+
+        <form [formGroup]="editImageForm" autocomplete="off" novalidate (ngSubmit)="editImageDescription()">
+            <fieldset class="form-group">
+                <!--<img *ngIf="imageUrl" [src]="imageUrl">-->
+                <div class="form-group">
+                    <input class="form-control add-input" type="text" ngDefaultControl formControlName="description" required placeholder="Short description" minlength="5">
+                </div>
+            </fieldset>
+
+            <button class="btn add-button" type="submit">Change description</button>
+        </form>
+    </div>
+</div>
